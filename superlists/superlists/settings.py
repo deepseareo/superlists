@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'y3m_gm&*2o+j3lvz5wukerbj-^0-(1ufjw@h_&%u7(3-&xt!e0'
+SECRET_KEY = 'z@i#jsq(c=62*)2u-@n690(2=9xs=l6tb4dd#-2&g%ql@d#%6i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'lists'
+    'lists',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -80,7 +80,7 @@ DATABASES = {
       'ENGINE': 'django.db.backends.postgresql_psycopg2',
       'NAME': 'superlistsDB',
       'USER': 'superlists',
-      'PASSWORD': 'superlists',
+      'PASSWORD': 'xxxxxxxx',
       'HOST': 'localhost',
       'PORT': '',
     }

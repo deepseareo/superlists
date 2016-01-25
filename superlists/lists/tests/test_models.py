@@ -2,13 +2,15 @@ from django.test import TestCase
 from django.core.exceptions import ValidationError
 from lists.models import Item, List
 
- 
+
+
 class ListAndItemModelTest(TestCase):
 
 
-    def test_saving_and_retrieving_items(self):
+    def test_可以儲存及取出清單項目(self):
         list_ = List()
         list_.save()
+        
         firstItem = Item()
         firstItem.text = '第一個清單項目'
         firstItem.list = list_
@@ -20,10 +22,10 @@ class ListAndItemModelTest(TestCase):
         secondItem.save()
 
         savedList = List.objects.first()
-        self.assertEqual(savedList, list_)
-   
+        self.assertEqual(savedList, list_)    
+                
         savedItems = Item.objects.all()
-        self.assertEqual(savedItems.count(), 2)
+        self.assertEqual(savedItems.count(), 2)    
         
         firstSavedItem = savedItems[0]
         secondSavedItem = savedItems[1]
@@ -33,11 +35,16 @@ class ListAndItemModelTest(TestCase):
         self.assertEqual(secondSavedItem.list, list_)
 
 
-    def test_cannot_save_empty_list_items(self):
+    def test_不能儲存空的清單項目(self):
         list_ = List.objects.create()
-        item = Item(list=list_, text='')
+        item = Item(text='', list=list_)
         with self.assertRaises(ValidationError):
-            item.full_clean()
             item.save()
-
-
+            item.full_clean()
+        
+        
+        
+        
+        
+        
+          
